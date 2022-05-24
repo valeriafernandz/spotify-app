@@ -1,10 +1,11 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
+import {HomeTitle} from './Home.styled';
 
 function Home() {
     const [token, setToken] = useState("");
-    const [data, setData] = useState({});
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -16,21 +17,23 @@ function Home() {
             window.localStorage.setItem("token", token);
         }
         setToken(token);
+        console.log(token);
     }, []);
 
     useEffect(()=>{
         const fetchItems = async () => {
-            const result = await axios.get(`https://api.spotify.com/v1/playlists`,{
+            const result = await axios.get(`https://api.spotify.com/v1/me/playlists`,{
             headers: {
                 Authorization: "Bearer" + token
-            }})
-            setData(result.data)
-            console.log(result.data)
+            }});
+            setData(result.data);
+            console.log("this is the result: "+ JSON.stringify(result.data));
         }
         fetchItems();
+        console.log(data);
     },[]);
   return (
-    <div>Home</div>
+    <HomeTitle>Welcome back + {}</HomeTitle>
   )
 }
 

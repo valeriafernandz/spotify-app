@@ -1,5 +1,5 @@
 import React from 'react'
-import {LoginContainer, LoginTitle, TextSecondary} from './Login.styled';
+import {LoginTitle, TextSecondary} from './Login.styled';
 import {LoginButton} from '../Button/Button.styled';
 import Home from '../Home/Home';
 import { Link } from "react-router-dom";
@@ -13,9 +13,6 @@ function LoginPage(){
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
     const RESPONSE_TYPE = "token";
     
-
-    
-
   return (
     <div className="LoginPage">
             <LoginTitle>Welcome</LoginTitle>
