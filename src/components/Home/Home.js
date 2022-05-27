@@ -1,11 +1,14 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
-import {HomeTitle} from './Home.styled';
+import Playlist from '../Playlist/Playlist';
+import Header from '../Header/Header';
+import Artists from '../Artists/Artists';
 
-function Home() {
+const Home = () => {
     const [token, setToken] = useState("");
     const [data, setData] = useState([]);
+    const [artist, setArtist] = useState([]);
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -20,21 +23,43 @@ function Home() {
     }, []);
 
     useEffect(()=>{
-        console.log("this is my token " + token);
-        const fetchItems = async () => {
+        if(token){
+            console.log("this is my token " + token);
+            const fetchArtists = async () => {
+            const result = await axios.get(`https://api.spotify.com/v1/me/top/artists`,{
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            }});
+            setArtist(result.artist);
+            }
+            fetchArtists();
+            console.log(artist);
+        }
+    },[token]);
+
+    useEffect(()=>{
+        if(token){
+            
+            const fetchPlaylists = async () => {
             const result = await axios.get(`https://api.spotify.com/v1/me/playlists`,{
             headers: {
-                'Authorization': 'Bearer' + token
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
             }});
             setData(result.data);
-            console.log("this is the result: "+ JSON.stringify(result.data));
+            }
+            fetchPlaylists();
+            console.log(data);
         }
-        fetchItems();
-        console.log(data);
-    },[]);
+    },[token]);
+    
   return (
-    <HomeTitle>Welcome back + {}</HomeTitle>
+    <>
+        <Header/>
+        <Artists artist={artist}/>
+    </>
   )
 }
 
-export default Home
+export default Home;

@@ -1,12 +1,6 @@
 body {
   background-image: url(./assets/Wave.svg);
   background-size: cover;
-  background-repeat: no-repeat;
 	margin: 0;
 	font-family: 'Koulen', cursive;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
