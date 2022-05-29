@@ -9,8 +9,6 @@ export const LoginButton = styled.button`
     margin-top: 2rem;
     border: none;
     box-shadow: 0 .5rem 1rem #ada8a8;
-    border: none;
-    text-transform: uppercase;
     font-family: 'Koulen', cursive;
     transition: all .2s;
     
@@ -25,5 +23,21 @@ export const LoginButton = styled.button`
             transform: scaleX(1.4) scaleY(1.6);
             opacity: 0;
         }
+    }
+`
+
+export const SeeAllButton = styled.button`
+    letter-spacing: .2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Koulen', cursive;
+    border:none;
+    background-color: transparent;
+    transition: all .2s;
+    margin-left: 1rem;
+    
+    &:hover{
+        transform: translateY(-0.3rem);
     }
 `

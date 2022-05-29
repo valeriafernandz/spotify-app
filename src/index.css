@@ -1,6 +1,12 @@
 body {
   background-image: url(./assets/Wave.svg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 	margin: 0;
 	font-family: 'Koulen', cursive;
+}
+
+.LoginPage{
+  text-align: center;
 }

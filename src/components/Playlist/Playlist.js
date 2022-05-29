@@ -1,20 +1,29 @@
 import React from 'react'
-import {PlaylistCard, CardContainer} from '../Card/Card.styled';
+import {PlaylistCard, CardContainer, PlaylistImg, CardTextPrimary, CardTextSecondary} from '../Card/Card.styled';
+import {SeeAllButton} from '../Button/Button.styled';
+import {Container, Title } from '../Artists/Artists.styled';
 
-const Playlist = ({data}) => {
+const Playlist = ({playlist}) => {
   return (
+    <>
+    <Container>
+    <Title>Top Playlists
+          <SeeAllButton>See all</SeeAllButton>
+    </Title>
     <CardContainer>
-        {data?.items ? data.items.map((item) => 
+        {playlist?.items ? playlist.items.map((item) => 
             <PlaylistCard>
             <div className="card-container">
-                <img src={item.images[1].url}></img>
-                <h5 className="card-name">{item.name}</h5>
-                <span className="nft-id">{item.tracks.total}</span>
+              <PlaylistImg src={item.images[0].url} alt=""/>
+                <CardTextPrimary>{item.name}</CardTextPrimary>
+                <CardTextSecondary>Owner: {item.owner.display_name}</CardTextSecondary>
             </div>
             </PlaylistCard>
         
      ):null}
      </CardContainer>
+     </Container>
+     </>
   )
 }
 

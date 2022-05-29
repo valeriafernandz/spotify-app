@@ -1,18 +1,26 @@
 import React from 'react'
-import { ArtistContainer, ArtistTitle, TopArtistCard, TopArtistsContainer } from './Artists.styled'
+import { Container, Title, TopArtistShape, TopArtistCardCaption, TopArtistImg, TopArtistsContainer } from './Artists.styled';
+import {SeeAllButton} from '../Button/Button.styled';
 
-const Artists = ({artist}) => {
+const Artists = ({artists}) => {
   return (
-    <ArtistContainer>
-        <ArtistTitle>Top Artists</ArtistTitle>
-        {artist?.items ? artist.items.map((item) => <>
-        <TopArtistsContainer>
-            <TopArtistCard>{item.name}</TopArtistCard>
-        </TopArtistsContainer>
-        </>):null}
+    <Container>
+        <Title>Top Artists
+          <SeeAllButton>See all</SeeAllButton>
+        </Title>
         
-    </ArtistContainer>
+        <TopArtistsContainer>
+          {artists?.items ? artists.items.map((item) => 
+            <TopArtistShape>
+              <TopArtistImg src={item.images[0].url}/>
+              <TopArtistCardCaption>{item.name}</TopArtistCardCaption>
+            </TopArtistShape>
+        ):null}
+        </TopArtistsContainer>
+        
+        
+    </Container>
   )
 }
 
-export default Artists
+export default Artists;

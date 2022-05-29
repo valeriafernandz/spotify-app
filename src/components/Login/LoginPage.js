@@ -1,6 +1,7 @@
 import React from 'react'
 import {LoginTitle, TextSecondary} from './Login.styled';
 import {LoginButton} from '../Button/Button.styled';
+import Header from '../Header/Header';
 
 function LoginPage(){
     const CLIENT_ID = "470d32d20ecb43a693cee722cf68c405";
@@ -31,6 +32,7 @@ function LoginPage(){
     
   return (
     <div className="LoginPage">
+            <Header/>
             <LoginTitle>Welcome</LoginTitle>
             <TextSecondary>Login with spotify</TextSecondary>
             <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPES.join("%20")}`}>

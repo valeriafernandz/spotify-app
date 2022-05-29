@@ -9,16 +9,18 @@ export const CardContainer = styled.div`
     gap: 2rem 2rem;
     transition: transform .5s;
 `
+
 export const PlaylistCard = styled.div`
-    
+    display:flex;
     flex-direction: column;
     background-color: #fff;
-    font-size: 1.5rem;
-    padding: 2.5rem;
-    border-radius: 40px;
-    box-shadow: 0 .5rem 1rem #fab1ef;
+    padding: .5rem;
+    border-radius: 4rem;
+    box-shadow: 0 .5rem 1rem #9e9a90;
     margin-bottom: 2rem;
-    letter-spacing: .2rem;
+    text-align:center;
+    
+
     &:hover{
         transform: translateY(-1.5rem) scale(1.03);
     }
@@ -47,22 +49,28 @@ export const PlaylistCard = styled.div`
       }
 `
 
-export const CardOptionContainer = styled.div`
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-content: space-between;
-      gap: 2rem 2rem;
+export const PlaylistImg = styled.img`
+      width: 15rem;
+      margin-top: 1.5rem;
 `
 
-export const  CardOptionPlaylist = styled.div`
-      flex-direction: column;
-      background-color: #fff;
-      font-size: 1.5rem;
-      padding: 2.5rem;
-      border-radius: 40px;
-      box-shadow: 0 .5rem 1rem #fab1ef;
-      margin-bottom: 2rem;
-      letter-spacing: .2rem;
+export const CardTextPrimary = styled.span`
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  letter-spacing: .2rem;
+  align-self: center;
+  justify-content: center;
+  margin-top: .5rem;
+`
+export const CardTextSecondary = styled.span`
+  display: flex;
+  flex-direction: row;
+  font-size: .7rem;
+  letter-spacing: .2rem;
+  align-self: center;
+  justify-content: center;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+
 `

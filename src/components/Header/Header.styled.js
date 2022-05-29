@@ -21,3 +21,15 @@ export const HeaderTitle = styled.span`
     text-align: center;
     color: #f4f4f4;
 `
+export const Profile = styled.figure`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 5rem;
+    height: 5rem;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    background-image: url(${({url})=>url});
+    background-size: cover;
+`
