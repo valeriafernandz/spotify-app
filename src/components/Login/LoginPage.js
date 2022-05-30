@@ -32,7 +32,6 @@ function LoginPage(){
     
   return (
     <div className="LoginPage">
-            <Header/>
             <LoginTitle>Welcome</LoginTitle>
             <TextSecondary>Login with spotify</TextSecondary>
             <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPES.join("%20")}`}>

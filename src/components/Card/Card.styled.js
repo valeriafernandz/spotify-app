@@ -7,7 +7,7 @@ export const CardContainer = styled.div`
     justify-content: center;
     align-content: space-between;
     gap: 2rem 2rem;
-    transition: transform .5s;
+    transition: transform 1.5s;
 `
 
 export const PlaylistCard = styled.div`
@@ -15,7 +15,7 @@ export const PlaylistCard = styled.div`
     flex-direction: column;
     background-color: #fff;
     padding: .5rem;
-    border-radius: 4rem;
+    border-radius: 3rem;
     box-shadow: 0 .5rem 1rem #9e9a90;
     margin-bottom: 2rem;
     text-align:center;
@@ -39,7 +39,7 @@ export const PlaylistCard = styled.div`
         flex: 0 0 40%;
       }
       @media (min-width: 1201px) and (max-width:1400px) {
-        flex: 0 0 30%;
+        flex: 0 0 20%;
       }
       @media (min-width: 1401px) and (max-width:1899px) {
         flex: 0 0 30%;

@@ -30,6 +30,6 @@ export const Profile = styled.figure`
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
-    background-image: url(${({url})=>url});
+    background-image: url(${({url})=>url || ''});
     background-size: cover;
 `

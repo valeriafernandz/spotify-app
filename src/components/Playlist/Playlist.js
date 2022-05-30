@@ -12,7 +12,7 @@ const Playlist = ({playlist}) => {
     </Title>
     <CardContainer>
         {playlist?.items ? playlist.items.map((item) => 
-            <PlaylistCard>
+            <PlaylistCard key={item.id}>
             <div className="card-container">
               <PlaylistImg src={item.images[0].url} alt=""/>
                 <CardTextPrimary>{item.name}</CardTextPrimary>

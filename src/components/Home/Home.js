@@ -6,14 +6,21 @@ import Header from '../Header/Header';
 import Artists from '../Artists/Artists';
 
 const Home = () => {
-    const playlistURL = 'https://api.spotify.com/v1/me/playlists?limit=4';
-    const artistsURL = 'https://api.spotify.com/v1/me/top/artists?limit=4';
-    const showsURL = 'https://api.spotify.com/v1/me/shows';
+    let playlistURL = 'https://api.spotify.com/v1/me/playlists?limit=4';
+    let artistsURL = 'https://api.spotify.com/v1/me/top/artists?limit=4';
+    let showsURL = 'https://api.spotify.com/v1/me/shows';
+    let profileURL = 'https://api.spotify.com/v1/me';
 
     const [token, setToken] = useState("");
     const [playlist, setPlaylist] = useState([]);
     const [artists, setArtists] = useState([]);
     const [show, setShow] = useState([]);
+    const [asset, setAsset] = useState([]);
+
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+    };
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -25,55 +32,40 @@ const Home = () => {
             window.localStorage.setItem("token", token);
         }
         setToken(token);
-    }, []);
+    },[]);    
 
-    useEffect(()=>{
+    useEffect(() => {
         if(token){
+            const fetchProfile = async () => {
+            const result = await axios.get(`${profileURL}`,{headers});
+            setAsset(result.data);
+            }
+            fetchProfile();
+
             const fetchArtists = async () => {
-            const result = await axios.get(`${artistsURL}`,{
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + token
-            }});
-            setArtists(result.data);
+                const result = await axios.get(`${artistsURL}`,{headers});
+                setArtists(result.data);
             }
             fetchArtists();
-            
-        }
-    },[token]);
 
-    useEffect(()=>{
-        if(token){
-            
             const fetchPlaylists = async () => {
-            const result = await axios.get(`${playlistURL}`,{
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + token
-            }});
-            setPlaylist(result.data);
+                const result = await axios.get(`${playlistURL}`,{headers});
+                setPlaylist(result.data);
             }
             fetchPlaylists();
-        }
-    },[token]);
 
-   useEffect(()=>{
-        if(token){
             const fetchShows = async () => {
-            const result = await axios.get(`${showsURL}`,{
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + token
-            }});
-            setShow(result.data);
+                const result = await axios.get(`${showsURL}`,{headers});
+                setShow(result.data);
             }
             fetchShows();
         }
-    },[token]);
+
+    }, [token]);
     
   return (
     <>
-        <Header token={token}/>
+        <Header asset={asset} token={token}/>
         <Artists artists={artists}/>
         <Playlist playlist={playlist}/>
     </>

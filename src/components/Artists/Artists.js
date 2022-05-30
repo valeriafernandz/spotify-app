@@ -11,7 +11,7 @@ const Artists = ({artists}) => {
         
         <TopArtistsContainer>
           {artists?.items ? artists.items.map((item) => 
-            <TopArtistShape>
+            <TopArtistShape key={item.id}>
               <TopArtistImg src={item.images[0].url}/>
               <TopArtistCardCaption>{item.name}</TopArtistCardCaption>
             </TopArtistShape>
