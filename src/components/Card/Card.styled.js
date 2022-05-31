@@ -15,7 +15,7 @@ export const PlaylistCard = styled.div`
     flex-direction: column;
     background-color: #fff;
     padding: .5rem;
-    border-radius: 3rem;
+    border-radius: 2rem;
     box-shadow: 0 .5rem 1rem #9e9a90;
     margin-bottom: 2rem;
     text-align:center;
@@ -52,6 +52,7 @@ export const PlaylistCard = styled.div`
 export const PlaylistImg = styled.img`
       width: 15rem;
       margin-top: 1.5rem;
+      
 `
 
 export const CardTextPrimary = styled.span`
@@ -72,5 +73,33 @@ export const CardTextSecondary = styled.span`
   justify-content: center;
   margin-top: .5rem;
   margin-bottom: .5rem;
+`
 
+export const CardTerciary = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  border-radius: 2rem;
+`
+
+export const CardTerciaryContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-content: space-between;
+  gap: 2rem 2rem;
+`
+
+export const CardTerciaryImg = styled.img`
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+`
+
+export const CardTerciaryText = styled.span`
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  align-self: center;
+  font-size: 1.5rem;
 `

@@ -60,3 +60,23 @@ export const TopArtistCardCaption = styled.figcaption`
     }
 `
 
+export const ArtistHeader = styled.div`
+    display:flex;
+    flex-direction: row;
+    width: 80vw;
+    height: 40vh;
+    margin-left:8vw;
+    background-image: url(${({url})=>url || ''});
+    background-size: cover;
+    border-radius: 2rem;
+    opacity: 0.8;
+    justify-content: center;
+`
+
+export const ArtistName = styled.span`
+    display:flex;
+    flex-direction: row;
+    font-size: 5rem;
+    color: white;
+`
+
