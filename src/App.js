@@ -9,6 +9,7 @@ import {
 import Artists from './components/Artists/Artists';
 import Artist from './components/Artists/Artist';
 import Playlist from './components/Playlist/Playlist';
+import PlaylistItem from './components/Playlist/PlaylistItem';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <Route path='/home' element={<Home/>}/>
                 <Route path='/artists' element={<Artists/>}/>
                 <Route path='/playlists' element={<Playlist/>}/>
+                <Route path='/playlists/playlist' element={<PlaylistItem/>}/>
                 <Route path='/artists/artist' element={<Artist/>}/>
             </Routes>
           </BrowserRouter>

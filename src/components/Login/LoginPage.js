@@ -1,5 +1,5 @@
 import React from 'react'
-import {LoginTitle, TextSecondary} from './Login.styled';
+import {LoginContainer, LoginTitle, TextSecondary} from './Login.styled';
 import {LoginButton} from '../Button/Button.styled';
 import Header from '../Header/Header';
 
@@ -31,13 +31,12 @@ function LoginPage(){
     ];
     
   return (
-    <div className="LoginPage">
+    <LoginContainer>
             <LoginTitle>Welcome</LoginTitle>
             <TextSecondary>Login with spotify</TextSecondary>
-            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPES.join("%20")}`}>
-                <LoginButton>Login</LoginButton>
-            </a>
-    </div>
+            <LoginButton href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPES.join("%20")}`}>Login
+            </LoginButton>
+    </LoginContainer>
     
   )
 }

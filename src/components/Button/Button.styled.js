@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
 
-export const LoginButton = styled.button`
+export const LoginButton = styled.a`
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    background-color: #fff;
+    text-decoration: none;
+    color: #000000;
     padding: 1rem 2rem;
     letter-spacing: .2rem;
     border-radius: 5rem;
@@ -13,7 +19,7 @@ export const LoginButton = styled.button`
     transition: all .2s;
     
         &::after{ 
-            background-color: #fff;
+            background-color: #f4f4f4;
             color: #4a4848;
         }
     

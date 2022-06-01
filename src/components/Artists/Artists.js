@@ -3,15 +3,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import {
   Container,
-  Title,
   TopArtistShape,
   TopArtistCardCaption,
   TopArtistImg,
   TopArtistsContainer,
 } from "./Artists.styled";
-import Header from "../Header/Header";
 import { SeeAllButton } from "../Button/Button.styled";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const Artists = () => {
@@ -21,6 +19,7 @@ const Artists = () => {
   const location = useLocation();
   const { asset } = location.state;
 
+  const navigate = useNavigate();
 
   const [artists, setArtists] = useState([]);
 
@@ -40,14 +39,14 @@ const Artists = () => {
 
   return (
     <>
-      <Link to="/home">
-        <SeeAllButton>&#8592; Go back</SeeAllButton>
-      </Link>
+      
+        <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
+     
       <Container>
           <TopArtistsContainer>
             {artists?.items
               ? artists.items.map((item) => (
-                <Link to="/artists/artist" state={{item,asset}}>
+                <Link to="/artists/artist" state={{item,asset,artists}}>
                   <TopArtistShape key={item.id}>
                     <TopArtistImg src={item.images[0].url} />
                     <TopArtistCardCaption>{item.name}</TopArtistCardCaption>

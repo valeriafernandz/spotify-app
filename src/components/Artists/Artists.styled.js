@@ -63,11 +63,12 @@ export const TopArtistCardCaption = styled.figcaption`
 export const ArtistHeader = styled.div`
     display:flex;
     flex-direction: row;
-    width: 80vw;
-    height: 40vh;
-    margin-left:8vw;
+    width: 60vw;
+    height: 50vh;
+    margin-left:18vw;
     background-image: url(${({url})=>url || ''});
-    background-size: cover;
+     background-size: contain;
+    background-attachment: fixed;
     border-radius: 2rem;
     opacity: 0.8;
     justify-content: center;
@@ -79,4 +80,40 @@ export const ArtistName = styled.span`
     font-size: 5rem;
     color: white;
 `
+
+export const ArtistTop = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;
+  background-color: #f4f4f4;
+  border-radius: 2rem;
+  justify-content: center;
+  margin-left: 30%;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+`
+
+export const ArtistTopContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 2rem 2rem;
+`
+
+export const ArtistTopImg = styled.img`
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+`
+
+export const ArtistTopText = styled.span`
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    align-self: center;
+    font-size: 1.5rem;
+`
+
 

@@ -98,17 +98,19 @@ const Home = () => {
         <TopArtistsContainer>
           {artists?.items
             ? artists.items.map((item) => (
+              <Link to="/artists/artist" state={{item, asset}}>
                 <TopArtistShape key={item.id}>
                   <TopArtistImg src={item.images[0].url} />
                   <TopArtistCardCaption>{item.name}</TopArtistCardCaption>
                 </TopArtistShape>
+              </Link>
               ))
             : null}
         </TopArtistsContainer>
 
         <Title>
           Top Playlists
-          <SeeAllButton>See all</SeeAllButton>
+          <Link to="/playlists"><SeeAllButton>See all</SeeAllButton></Link>
         </Title>
         <CardContainer>
           {playlist?.items
