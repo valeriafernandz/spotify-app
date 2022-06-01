@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    margin: 2vw;
+    margin: 5vw;
 `
 
 export const Title = styled.span`

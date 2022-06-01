@@ -52,7 +52,6 @@ const Artist = () => {
 
   return (
     <>
-      
         <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
      
       <Container key={artist.id}>
