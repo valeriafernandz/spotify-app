@@ -1,4 +1,5 @@
 import React from "react";
+import { ARTISTS_URL } from "../../constants/index";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -13,7 +14,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const Artists = () => {
-  let artistsURL = "https://api.spotify.com/v1/me/top/artists";
   const token = window.localStorage.token;
 
   const location = useLocation();
@@ -23,14 +23,14 @@ const Artists = () => {
 
   const [artists, setArtists] = useState([]);
 
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: "Bearer " + token,
-  };
   useEffect(() => {
     if (token) {
+      const headers = {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      };
       const fetchArtists = async () => {
-        const result = await axios.get(`${artistsURL}`, { headers });
+        const result = await axios.get(`${ARTISTS_URL}`, { headers });
         setArtists(result.data);
       };
       fetchArtists();
@@ -39,23 +39,20 @@ const Artists = () => {
 
   return (
     <>
-      
-        <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
-     
+      <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
+
       <Container>
-          <TopArtistsContainer>
-            {artists?.items
-              ? artists.items.map((item) => (
-                <Link to="/artists/artist" state={{item,asset,artists}}>
-                  <TopArtistShape key={item.id}>
-                    <TopArtistImg src={item.images[0].url} />
-                    <TopArtistCardCaption>{item.name}</TopArtistCardCaption>
-                  </TopArtistShape>
-                  </Link>
-                ))
-              : null}
-          </TopArtistsContainer>
-        
+        <TopArtistsContainer>
+          {artists?.items &&
+            artists.items.map((item) => (
+              <Link to="/artists/artist" state={{ item, asset, artists }}>
+                <TopArtistShape key={item.id}>
+                  <TopArtistImg src={item.images[0].url} />
+                  <TopArtistCardCaption>{item.name}</TopArtistCardCaption>
+                </TopArtistShape>
+              </Link>
+            ))}
+        </TopArtistsContainer>
       </Container>
     </>
   );

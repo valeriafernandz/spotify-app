@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.div`
+export const PlaylistCardContainer = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -49,10 +49,9 @@ export const PlaylistCard = styled.div`
       }
 `
 
-export const PlaylistImg = styled.img`
+export const PlaylistCardImg = styled.img`
       width: 15rem;
       margin-top: 1.5rem;
-      
 `
 
 export const CardTextPrimary = styled.span`
@@ -64,6 +63,7 @@ export const CardTextPrimary = styled.span`
   justify-content: center;
   margin-top: .5rem;
 `
+
 export const CardTextSecondary = styled.span`
   display: flex;
   flex-direction: row;
@@ -75,31 +75,50 @@ export const CardTextSecondary = styled.span`
   margin-bottom: .5rem;
 `
 
-export const CardTerciary = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: #f4f4f4;
-  border-radius: 2rem;
+export const PlaylistHeader = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-left: 10vw;
+    background-color: #f4f4f4;
+    
+`
+export const PlaylistImg = styled.img`
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
 `
 
-export const CardTerciaryContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-content: space-between;
-  gap: 2rem 2rem;
+export const DetailsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 2vw;
+    align-self: center;
+`
+export const PlaylistName = styled.span`
+    display: flex;
+    flex-direction: row;
+    font-size: 4rem;
+    
 `
 
-export const CardTerciaryImg = styled.img`
-  display: flex;
-  flex-direction: column;
-  width: 15%;
+export const TypePlaylist = styled.span`
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    
 `
 
-export const CardTerciaryText = styled.span`
-  display: flex;
-  flex-direction: column;
-  color: #000;
-  align-self: center;
-  font-size: 1.5rem;
+export const PlaylistOwner = styled.div`
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
 `
+export const PlaylistTracks = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-left: 10vw;
+`
+
