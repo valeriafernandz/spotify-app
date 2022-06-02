@@ -20,7 +20,6 @@ export const PlaylistCard = styled.div`
     margin-bottom: 2rem;
     text-align:center;
     
-
     &:hover{
         transform: translateY(-1.5rem) scale(1.03);
     }
@@ -45,7 +44,7 @@ export const PlaylistCard = styled.div`
         flex: 0 0 30%;
       }
       @media (min-width: 1900px) {
-        flex: 0 0 20%;
+        flex: 0 0 40%;
       }
 `
 
@@ -62,6 +61,7 @@ export const CardTextPrimary = styled.span`
   align-self: center;
   justify-content: center;
   margin-top: .5rem;
+  text-decoration: none;
 `
 
 export const CardTextSecondary = styled.span`
@@ -73,6 +73,7 @@ export const CardTextSecondary = styled.span`
   justify-content: center;
   margin-top: .5rem;
   margin-bottom: .5rem;
+  text-decoration: none;
 `
 
 export const PlaylistHeader = styled.div`

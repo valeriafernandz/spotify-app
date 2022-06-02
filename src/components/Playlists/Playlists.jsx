@@ -43,13 +43,11 @@ const Playlists = () => {
             playlist.items.map((item) => (
               <Link to="/playlists/playlist" state={{ item }}>
                 <PlaylistCard key={item.id}>
-                  <div className="card-container">
                     <PlaylistCardImg src={item.images[0].url} alt="" />
                     <CardTextPrimary>{item.name}</CardTextPrimary>
                     <CardTextSecondary>
                       Owner: {item.owner.display_name}
                     </CardTextSecondary>
-                  </div>
                 </PlaylistCard>
               </Link>
             ))}
