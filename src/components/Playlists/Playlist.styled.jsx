@@ -13,11 +13,10 @@ export const PlaylistCardContainer = styled.div`
 export const PlaylistCard = styled.div`
     display:flex;
     flex-direction: column;
-    background-color: #fff;
-    padding: .5rem;
+    background-color: #292728;
+    padding: 1.5rem;
     border-radius: 2rem;
-    box-shadow: 0 .5rem 1rem #9e9a90;
-    margin-bottom: 2rem;
+    box-shadow: 0 .5rem 1rem #292728;
     text-align:center;
     
     &:hover{
@@ -44,7 +43,7 @@ export const PlaylistCard = styled.div`
         flex: 0 0 30%;
       }
       @media (min-width: 1900px) {
-        flex: 0 0 40%;
+        flex: 0 0 20%;
       }
 `
 
@@ -57,6 +56,7 @@ export const CardTextPrimary = styled.span`
   display: flex;
   flex-direction: row;
   font-size: 1rem;
+  color: #fff;
   letter-spacing: .2rem;
   align-self: center;
   justify-content: center;
@@ -68,6 +68,7 @@ export const CardTextSecondary = styled.span`
   display: flex;
   flex-direction: row;
   font-size: .7rem;
+  color: #27CC8454;
   letter-spacing: .2rem;
   align-self: center;
   justify-content: center;
@@ -81,7 +82,7 @@ export const PlaylistHeader = styled.div`
     flex-direction: row;
     width: 80%;
     margin-left: 10vw;
-    background-color: #f4f4f4;
+    background-color: #393534;
     
 `
 export const PlaylistImg = styled.img`
@@ -101,6 +102,7 @@ export const PlaylistName = styled.span`
     display: flex;
     flex-direction: row;
     font-size: 4rem;
+    color: #fff;
     
 `
 
@@ -108,6 +110,7 @@ export const TypePlaylist = styled.span`
     display: flex;
     flex-direction: row;
     font-size: 1rem;
+    color: #27CC8454;
     
 `
 
@@ -115,6 +118,7 @@ export const PlaylistOwner = styled.div`
     display: flex;
     flex-direction: row;
     font-size: 1rem;
+    color: #27CC8454;
 `
 export const PlaylistTracks = styled.div`
     display: flex;

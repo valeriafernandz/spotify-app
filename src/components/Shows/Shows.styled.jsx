@@ -13,7 +13,7 @@ export const CardContainer = styled.div`
 export const CardTerciary = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #f4f4f4;
+  background-color: #292728;
   border-radius: 2rem;
 `
 
@@ -29,12 +29,14 @@ export const CardTerciaryImg = styled.img`
   display: flex;
   flex-direction: column;
   width: 15%;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 `
 
 export const CardTerciaryText = styled.span`
   display: flex;
   flex-direction: column;
-  color: #000;
+  color: #fff;
   align-self: center;
   font-size: 1.5rem;
 `

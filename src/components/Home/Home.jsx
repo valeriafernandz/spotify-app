@@ -43,6 +43,7 @@ const Home = () => {
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
+    console.log(hash);
 
     if (!token && hash) {
       token = hash
@@ -121,15 +122,15 @@ const Home = () => {
         <PlaylistCardContainer>
           {playlist?.items &&
             playlist.items.map((item) => (
+              <Link to="/playlists/playlist" state={{ item }} style={{textDecoration:'none', color:'#000'}}>
               <PlaylistCard key={item.id}>
-                <div className="card-container">
                   <PlaylistCardImg src={item.images[0].url} alt="" />
                   <CardTextPrimary>{item.name}</CardTextPrimary>
                   <CardTextSecondary>
                     Owner: {item.owner.display_name}
                   </CardTextSecondary>
-                </div>
               </PlaylistCard>
+              </Link>
             ))}
         </PlaylistCardContainer>
 

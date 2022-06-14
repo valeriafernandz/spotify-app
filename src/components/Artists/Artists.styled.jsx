@@ -9,6 +9,7 @@ export const Title = styled.span`
     flex-direction: row;
     font-size: 2rem;
     color: #f4f4f4;
+    margin-top: 2rem;
 `
 
 export const TopArtistsContainer = styled.div`
@@ -67,10 +68,9 @@ export const ArtistHeader = styled.div`
     height: 50vh;
     margin-left:18vw;
     background-image: url(${({url})=>url || ''});
-     background-size: contain;
-    background-attachment: fixed;
+    background-size: contain;
+	margin: 0 auto;
     border-radius: 2rem;
-    opacity: 0.8;
     justify-content: center;
 `
 

@@ -41,8 +41,8 @@ const Playlists = () => {
         <PlaylistCardContainer>
           {playlist?.items &&
             playlist.items.map((item) => (
-              <Link to="/playlists/playlist" state={{ item }}>
-                <PlaylistCard key={item.id}>
+              <Link to="/playlists/playlist" state={{ item }} style={{textDecoration:'none', color:'#000'}}>
+                <PlaylistCard key={item.id} onClick={() => navigate('/')}>
                     <PlaylistCardImg src={item.images[0].url} alt="" />
                     <CardTextPrimary>{item.name}</CardTextPrimary>
                     <CardTextSecondary>
