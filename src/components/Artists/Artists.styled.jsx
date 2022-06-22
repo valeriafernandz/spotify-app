@@ -18,32 +18,18 @@ export const TopArtistsContainer = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     align-content: space-between;
-`
+    gap: 2rem;
 
-export const TopArtistShape = styled.figure`
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    width: 15rem;
-    height: 15rem;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-    position: relative;
 `
 
 export const TopArtistImg = styled.img`
-    transform: scale(1.4);
+    transform: scale(1.3);
     backface-visibility: hidden;
     transition: all .5s;
 
-    &:hover{
-        transform: scale(1);
-        filter: blur(3px) brightness(80%);
-    }
 `
 
-export const TopArtistCardCaption = styled.figcaption`
+export const TopArtistCardCaption = styled.span`
     position: absolute;
     top: 50%;
     left: 50%;
@@ -54,10 +40,28 @@ export const TopArtistCardCaption = styled.figcaption`
     opacity: 0;
     transition: all .5s;
     backface-visibility: hidden;
+`
+
+export const TopArtistShape = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 15rem;
+    height: 15rem;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    position: relative;
 
     &:hover{
-        opacity: 1;
-        transform: translate(-50%,-50%);
+        ${TopArtistImg}{
+            transform: scale(1);
+            filter: blur(3px) brightness(80%);
+        }
+        ${TopArtistCardCaption}{
+            opacity: 1;
+            transform: translate(-50%,-50%);
+        }
     }
 `
 
