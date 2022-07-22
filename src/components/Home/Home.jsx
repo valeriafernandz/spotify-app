@@ -2,12 +2,10 @@ import React from "react";
 import {
   ARTISTS_URL,
   PLAYLISTS_URL,
-  SHOWS_URL,
-  ME_URL,
+  SHOWS_URL
 } from "../../constants/index";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -64,11 +62,6 @@ const Home = () => {
         "Content-Type": "application/json",
         Authorization: "Bearer " + token,
       };
-      const fetchProfile = async () => {
-        const result = await axios.get(`${ME_URL}`, { headers });
-        setAsset(result.data);
-      };
-      fetchProfile();
 
       const fetchArtists = async () => {
         const result = await axios.get(`${ARTISTS_URL}?limit=4`, { headers });
@@ -92,7 +85,6 @@ const Home = () => {
 
   return (
     <>
-      <Header asset={asset} token={token} />
       <Container>
         <Title>
           Top Artists
@@ -150,6 +142,7 @@ const Home = () => {
             ))}
         </CardContainer>
       </Container>
+     
     </>
   );
 };

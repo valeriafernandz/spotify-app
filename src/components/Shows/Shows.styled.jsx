@@ -15,6 +15,7 @@ export const CardTerciary = styled.div`
   flex-direction: column;
   background-color: #292728;
   border-radius: 2rem;
+  width: 40%;
 `
 
 export const CardTerciaryContainer = styled.div`

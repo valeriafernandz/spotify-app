@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    margin: 5vw;
+    margin: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
 `
 
 export const Title = styled.span`
@@ -9,7 +12,7 @@ export const Title = styled.span`
     flex-direction: row;
     font-size: 2rem;
     color: #f4f4f4;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 `
 
 export const TopArtistsContainer = styled.div`
@@ -68,34 +71,30 @@ export const TopArtistShape = styled.div`
 export const ArtistHeader = styled.div`
     display:flex;
     flex-direction: row;
-    width: 60vw;
-    height: 50vh;
-    margin-left:18vw;
+    width: 100%;
     background-image: url(${({url})=>url || ''});
-    background-size: contain;
-	margin: 0 auto;
-    border-radius: 2rem;
     justify-content: center;
+    height: 40vh;
+    opacity: 0.8;
 `
 
 export const ArtistName = styled.span`
     display:flex;
     flex-direction: row;
     font-size: 5rem;
-    color: white;
+    color: #f4f4f4;
+    opacity: 1;
+    align-self: center;
 `
 
 export const ArtistTop = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40%;
-  height: 100%;
-  background-color: #f4f4f4;
-  border-radius: 2rem;
-  justify-content: center;
-  margin-left: 30%;
+  width: 60%;
+  background-color: #292728;
+  justify-content: start;
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  color: #f4f4f4;
 `
 
 export const ArtistTopContainer = styled.div`
@@ -118,6 +117,15 @@ export const ArtistTopText = styled.span`
     color: #000;
     align-self: center;
     font-size: 1.5rem;
+`
+
+export const ArtistInfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+`
+export const TableImg = styled.img`
+    width: 4rem;
 `
 
 

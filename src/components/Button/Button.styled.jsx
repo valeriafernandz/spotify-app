@@ -33,6 +33,9 @@ export const LoginButton = styled.a`
 `
 
 export const SeeAllButton = styled.button`
+    display: flex:
+    flex-direction: row;
+    align-self: start;
     letter-spacing: .2rem;
     font-size: 1rem;
     font-weight: 600;
@@ -41,7 +44,26 @@ export const SeeAllButton = styled.button`
     border:none;
     background-color: transparent;
     transition: all .2s;
-    margin-left: 1rem;
+    color: #f4f4f4;
+    
+    &:hover{
+        transform: translateY(-0.3rem);
+    }
+`
+
+export const MenuOptionButton = styled.button`
+    letter-spacing: .2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Koulen', cursive;
+    border:none;
+    background-color: transparent;
+    transition: all .2s;
+    color: #f4f4f4;
+    margin-bottom: 2rem;
+    
+    text-decoration: none;
     
     &:hover{
         transform: translateY(-0.3rem);

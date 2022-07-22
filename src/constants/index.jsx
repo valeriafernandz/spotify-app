@@ -34,3 +34,4 @@ export const SHOWS_URL = `${ME_URL}/shows`;
 
 export const ARTIST_URL = `${SPOTIFY_API_URL}/artists`;
 export const PLAYLIST_URL = `${SPOTIFY_API_URL}/playlists`;
+export const SEARCH_URL = `${SPOTIFY_API_URL}/search`;

@@ -36,8 +36,9 @@ const Playlists = () => {
   }, [token]);
   return (
     <>
-      <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
+      
       <Container>
+      <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
         <PlaylistCardContainer>
           {playlist?.items &&
             playlist.items.map((item) => (

@@ -10,14 +10,14 @@ export const HeaderContainer = styled.div`
 export const HeaderLogo = styled.img`
     display: flex;
     flex-direction: column;
-    width: 5vw;
+    width: 2vw;
     margin: 2vw;
 `
 
 export const HeaderTitle = styled.span`
     display: flex;
     flex-direction: column;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     color: #f4f4f4;
 `
@@ -25,8 +25,8 @@ export const Profile = styled.figure`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width: 5rem;
-    height: 5rem;
+    width: 2.5rem;
+    height: 2.5rem;
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);

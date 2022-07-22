@@ -7,13 +7,16 @@ import { useNavigate } from "react-router-dom";
 import { SeeAllButton } from "../Button/Button.styled";
 import {
   ArtistHeader,
+  ArtistInfoContainer,
   ArtistName,
   ArtistTop,
   ArtistTopContainer,
   ArtistTopImg,
   ArtistTopText,
   Container,
+  TableImg,
 } from "./Artists.styled";
+import { TracksTable, TracksTableTH, TracksTableTR, TracksTableTD } from "../Playlists/Playlist.styled";
 
 const Artist = () => {
   const token = window.localStorage.token;
@@ -55,9 +58,8 @@ const Artist = () => {
 
   return (
     <>
-      <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
-
       <Container key={artist.id}>
+      <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
         <ArtistHeader
           url={
             !!artistID && artist?.images?.length ? artist.images[0].url : null
@@ -65,17 +67,28 @@ const Artist = () => {
         >
           <ArtistName>{artist.name}</ArtistName>
         </ArtistHeader>
-        {artistTop?.tracks &&
+
+        <ArtistInfoContainer>
+          <ArtistTop>
+        <TracksTable>
+              <TracksTableTR>
+                <TracksTableTH>#</TracksTableTH>
+                <TracksTableTH>Title</TracksTableTH>
+                <TracksTableTH>Album</TracksTableTH>
+                <TracksTableTH>Duration</TracksTableTH>
+              </TracksTableTR>
+              {artistTop?.tracks &&
           artistTop.tracks.map((track) => (
-            <ArtistTop>
-              <ArtistTopContainer>
-                <ArtistTopContainer>
-                  <ArtistTopImg src={track.album.images[0].url} />
-                  <ArtistTopText>{track.name}</ArtistTopText>
-                </ArtistTopContainer>
-              </ArtistTopContainer>
-            </ArtistTop>
-          ))}
+            <TracksTableTR>
+              <TracksTableTD><TableImg src={track.album.images[0].url}></TableImg></TracksTableTD>
+              <TracksTableTD>{track.name}</TracksTableTD>
+              <TracksTableTD>{track.album.name}</TracksTableTD>
+              <TracksTableTD>{(track.duration_ms/60000).toFixed(2)}</TracksTableTD>
+            </TracksTableTR>
+            ))}
+        </TracksTable>
+        </ArtistTop>
+          </ArtistInfoContainer>
       </Container>
     </>
   );

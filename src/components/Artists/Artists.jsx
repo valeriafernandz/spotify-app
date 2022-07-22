@@ -18,7 +18,7 @@ const Artists = () => {
 
   const location = useLocation();
   const { asset } = location.state;
-
+  
   const navigate = useNavigate();
 
   const [artists, setArtists] = useState([]);
@@ -39,9 +39,12 @@ const Artists = () => {
 
   return (
     <>
-      <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
+      
 
       <Container>
+        
+      <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
+
         <TopArtistsContainer>
           {artists?.items &&
             artists.items.map((item) => (

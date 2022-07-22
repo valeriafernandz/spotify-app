@@ -80,15 +80,14 @@ export const CardTextSecondary = styled.span`
 export const PlaylistHeader = styled.div`
     display: flex;
     flex-direction: row;
-    width: 80%;
-    margin-left: 10vw;
-    background-color: #393534;
+    width: 100%;
+    background-color: #292728;
     
 `
 export const PlaylistImg = styled.img`
     display: flex;
     flex-direction: column;
-    width: 15vw;
+    width: 20vw;
 `
 
 export const DetailsContainer = styled.div`
@@ -123,7 +122,27 @@ export const PlaylistOwner = styled.div`
 export const PlaylistTracks = styled.div`
     display: flex;
     flex-direction: row;
-    width: 80%;
-    margin-left: 10vw;
+    width: 100%;
+    background-color: #292728;
+    color: #f4f4f4;
+`
+
+export const TracksTable = styled.table`
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: 2rem;
+`
+
+export const TracksTableTR = styled.tr`
+`
+
+export const TracksTableTH = styled.th`
+    text-align: left;
+    
+`
+
+export const TracksTableTD = styled.td`
+  text-align: left;
+  
 `
 

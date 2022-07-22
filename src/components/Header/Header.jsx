@@ -12,7 +12,7 @@ const Header = ({ asset, token }) => {
     <>
       <HeaderContainer>
         <HeaderLogo src={whiteLogo} />
-        <HeaderTitle>Spotify App Aesthetic</HeaderTitle>
+        <HeaderTitle>Spotify App</HeaderTitle>
         <div key={asset.id} className="profile-Container">
           <Profile
             url={!!token && asset?.images?.length ? asset.images[0].url : null}
