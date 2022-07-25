@@ -10,9 +10,10 @@ export const Container = styled.div`
 export const Title = styled.span`
     display:flex;
     flex-direction: row;
-    font-size: 2rem;
+    font-size: ${({fontSize})=>fontSize || '2rem'};
     color: #f4f4f4;
     margin-top: 1.5rem;
+    align-self: ${({textAlign})=>textAlign || 'start'};
 `
 
 export const TopArtistsContainer = styled.div`
@@ -87,7 +88,7 @@ export const ArtistName = styled.span`
     align-self: center;
 `
 
-export const ArtistTop = styled.div`
+export const ArtistTopContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 60%;
@@ -95,14 +96,6 @@ export const ArtistTop = styled.div`
   justify-content: start;
   margin-bottom: 2rem;
   color: #f4f4f4;
-`
-
-export const ArtistTopContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    flex-wrap: wrap;
-    gap: 2rem 2rem;
 `
 
 export const ArtistTopImg = styled.img`
@@ -121,11 +114,22 @@ export const ArtistTopText = styled.span`
 
 export const ArtistInfoContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
+    gap: 1rem 1rem;
 `
 export const TableImg = styled.img`
-    width: 4rem;
+    max-width: 4rem;
 `
+export const RelatedArtistsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background-color: #292728;
+    justify-content: start;
+    margin-bottom: 2rem;
+    color: #f4f4f4;
+`
+
 
 

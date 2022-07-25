@@ -131,18 +131,22 @@ export const TracksTable = styled.table`
     width: 100%;
     margin-top: 2rem;
     margin-left: 2rem;
+    overflow: hidden;
 `
 
 export const TracksTableTR = styled.tr`
+  overflow: hidden; 
 `
 
 export const TracksTableTH = styled.th`
     text-align: left;
+    overflow: hidden;
     
 `
 
 export const TracksTableTD = styled.td`
   text-align: left;
+  overflow: hidden;
   
 `
 

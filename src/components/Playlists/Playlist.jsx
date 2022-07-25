@@ -54,9 +54,10 @@ const Playlist = () => {
 
   return (
     <>
-      
       <Container>
-      <SeeAllButton onClick={() => navigate(-1)}>&#8592; Go back</SeeAllButton>
+        <SeeAllButton onClick={() => navigate(-1)}>
+          &#8592; Go back
+        </SeeAllButton>
         <PlaylistHeader>
           <PlaylistImg src={playlistImg} />
           <DetailsContainer>
@@ -76,15 +77,17 @@ const Playlist = () => {
               <TracksTableTH>Album</TracksTableTH>
               <TracksTableTH>Duration</TracksTableTH>
             </TracksTableTR>
-            {playlistItems?.items && playlistItems.items.map((item) => (
-              <TracksTableTR key={item.track.id}>
-              <TracksTableTD>{item.track.track_number}</TracksTableTD>
-              <TracksTableTD>{item.track.name}</TracksTableTD>
-              <TracksTableTD>{item.track.album.name}</TracksTableTD>
-              <TracksTableTD>{(item.track.duration_ms/60000).toFixed(2)} </TracksTableTD>
-            </TracksTableTR>
-            ))}
-            
+            {playlistItems?.items &&
+              playlistItems.items.map((item) => (
+                <TracksTableTR key={item.track.id}>
+                  <TracksTableTD>{item.track.track_number}</TracksTableTD>
+                  <TracksTableTD>{item.track.name}</TracksTableTD>
+                  <TracksTableTD>{item.track.album.name}</TracksTableTD>
+                  <TracksTableTD>
+                    {(item.track.duration_ms / 60000).toFixed(2)}{" "}
+                  </TracksTableTD>
+                </TracksTableTR>
+              ))}
           </TracksTable>
         </PlaylistTracks>
       </Container>
